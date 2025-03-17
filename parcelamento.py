@@ -25,25 +25,29 @@ def create_receivables_schedule(transaction, holidays=None):
     """
     Transforma uma transação em uma agenda de recebíveis conforme as regras:
     
-      - Se o produto for "Débito": o pagamento é feito no próximo dia útil após a data de pagamento.
-      - Se for "Crédito": 
-          • Para 1 parcela: pagamento 30 dias depois (corrigindo para dia útil).
-          • Para N parcelas: divide o valor igualmente (distribuindo o eventual resto) e
-            cada parcela vence a cada 30 dias (30, 60, 90... dias, ajustando para o próximo dia útil).
+      - Para transações de Débito:
+          • Pagamento no próximo dia útil após a data da transação.
       
-    O campo "value" está em centavos e é convertido para reais com duas casas decimais.
+      - Para transações de Crédito:
+          • Geração das parcelas originais: 
+              - Para 1 parcela: vencimento 30 dias depois (ajustado para dia útil).
+              - Para N parcelas: cada parcela vence a cada 30 dias (30, 60, 90, ...) a partir da data da transação,
+                ajustando para o próximo dia útil.
     
-    O output incluirá:
+    O valor ("value") está em centavos e é convertido para reais com duas casas decimais.
+    
+    O output inclui:
       - nsu, status, brand, gateway_name, merchant_issuer_specific_id
       - credit_or_debit (valor de product_name)
       - resolution_type
-      - original_installments (lista de parcelas originais, cada uma com installment, due_date e amount)
-      
-    Se resolution_type for "Automática" e a transação for de crédito, será adicionada
-    a chave new_installment, que representa a antecipação automática:
-      - new_installment: única parcela com installment=1, due_date = primeiro dia útil após a transação,
-        e amount = soma das parcelas originais multiplicada por (1 - taxa), onde:
-           Taxa = 0.02 + (parcels - 1)*0.01
+      - transaction_date (data da transação, no formato YYYY-MM-DD)
+      - original_installments (lista de parcelas geradas)
+    
+    Se a transação for de crédito e tiver resolução "Automática", será criada também a chave "new_installment":
+      - new_installment: única parcela com:
+          • installment: 1
+          • due_date: primeiro dia útil após a data da transação
+          • amount: valor total da transação * (1 - taxa), onde a taxa é obtida de uma tabela fixa, de acordo com o número de parcelas.
     """
     if holidays is None:
         holidays = []
@@ -59,6 +63,7 @@ def create_receivables_schedule(transaction, holidays=None):
             "due_date": due_date.strftime("%Y-%m-%d"),
             "amount": f"{transaction['value'] / 100:.2f}"
         })
+        
     elif product == "crédito":
         parcels = transaction.get("parcels", 1)
         total_value = transaction["value"]
@@ -85,16 +90,41 @@ def create_receivables_schedule(transaction, holidays=None):
         "merchant_issuer_specific_id": transaction.get("merchant_issuer_specific_id", ""),
         "credit_or_debit": transaction["product_name"],
         "resolution_type": transaction.get("resolution_type", ""),
+        "transaction_date": payment_date.strftime("%Y-%m-%d"),
         "original_installments": original_installments
     }
     
-    # Se for crédito e a resolução for Automática, calcular o new_installment
+    # Se a transação for de crédito com resolução "Automática", aplica a antecipação
     if product == "crédito" and transaction.get("resolution_type", "").lower() == "automática":
         parcels = transaction.get("parcels", 1)
-        # Taxa: 2% para 1 parcela e aumenta 1% para cada parcela adicional
-        tax = 0.02 + (parcels - 1) * 0.01
-        # O valor total é a soma das parcelas (igual a transaction["value"])
-        new_amount = (transaction["value"] * (1 - tax)) / 100  # Convertendo para reais
+        # Tabela de taxas fixas de 1 até 21 parcelas (taxa aplicada sobre o valor total)
+        tax_table = {
+            1: 0.02,
+            2: 0.03,
+            3: 0.04,
+            4: 0.05,
+            5: 0.06,
+            6: 0.07,
+            7: 0.08,
+            8: 0.09,
+            9: 0.10,
+            10: 0.11,
+            11: 0.12,
+            12: 0.13,
+            13: 0.14,
+            14: 0.15,
+            15: 0.16,
+            16: 0.17,
+            17: 0.18,
+            18: 0.19,
+            19: 0.20,
+            20: 0.21,
+            21: 0.22
+        }
+        if parcels not in tax_table:
+            raise ValueError("Número de parcelas fora do limite suportado (1-21)")
+        tax = tax_table[parcels]
+        new_amount = (transaction["value"] * (1 - tax)) / 100  # valor líquido em reais
         new_due_date = next_business_day(payment_date + timedelta(days=1), holidays)
         result["new_installment"] = {
             "installment": 1,
@@ -112,10 +142,10 @@ if __name__ == "__main__":
     # Garante que data seja uma lista de transações
     transactions = data if isinstance(data, list) else [data]
     
-    # (Opcional) Lista de feriados - ajuste conforme necessário
+    # (Opcional) Defina uma lista de feriados se necessário
     holidays = []  # Exemplo: [datetime(2023, 12, 25).date()]
     
-    # Processa cada transação e gera a nova tabela
+    # Processa cada transação e gera a nova tabela de recebíveis
     new_table = [create_receivables_schedule(t, holidays) for t in transactions]
     
     # Exibe o resultado formatado em JSON
