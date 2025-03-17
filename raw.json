@@ -1,0 +1,209 @@
+{
+    "nsu": 150081,
+    "uuid": "fcb7ebff-b7b8-379c-9a08-d1b4808fc9ad",
+    "value": 50,
+    "status": 1,
+    "parcels": 7,
+    "brand": "VISA ELECTRON",
+    "prepaid_brand": true,
+    "payment_date": "2017-11-22T20:14:44.939Z",
+    "confirmation_date": "2017-11-22T20:16:00.700Z",
+    "payment_last_update_date": "2017-11-22T23:14:37.939Z",
+    "payment_last_update_datetime": "2017-11-22T20:14:37.939Z",
+    "aid": "A0000000041010",
+    "checkout_type": "DIRECT",
+    "refunded_value": 0,
+    "acquirer_nsu": "7400553",
+    "card_number": "455658******0608",
+    "start_date": "2017-11-22T20:14:44.986Z",
+    "finish_date": "2017-11-22T20:16:00.480Z",
+    "response_code": "00",
+    "response_message": "TIMEOUT COM AUTORIZADOR",
+    "authorization_number": "139740",
+    "terminal": "00000501",
+    "tef_terminal": "00000501",
+    "terminal_serial_number": "36216516516",
+    "terminal_manufacturer": "PAX",
+    "terminal_model": "S920",
+    "terminal_type": "01",
+    "acquirer": 3,
+    "merchant": "000005",
+    "tef_merchant": "321651",
+    "stone_code": "123456",
+    "merchant_category_code": "84",
+    "merchant_national_type": "01",
+    "merchant_national_id": "05784823477",
+    "product_name": "Débito",
+    "product_id": "005",
+    "card_input_method": "02",
+    "requested_password": "01",
+    "fallback": "00",
+    "origin": "00",
+    "authorization_time": 92,
+    "client_version": "TEF: v1.4.7.2; ADIQ: v1.0.0.0; PAYSTORE-240x320: v1.0.1.0; TEFUI: v1.4.2.0; PhVM: 9.4.7.0; ",
+    "server_version": "TEF Module: 1.10.2.0; PhAST: 6.5.2.0; ADIQ Module: 1.0.0.0; ",
+    "fee_tam": "3000",
+    "fee_value": "1610",
+    "fee_tr": "2000",
+    "simcard_serial_number": 85638591492852,
+    "simcard_provider": "Lyra",
+    "external_app_id": 10,
+    "external_app_version": 1,
+    "external_app_payment_id": 123456,
+    "card_holder": "João da Silva",
+    "capture_channel": "DIGITAL",
+    "ecommerce_payment_type": "PURCHASE",
+    "order_number": "3358",
+    "customer_national_id": "012345******",
+    "customer_national_type": "01",
+    "customer_email": "joão.silva@phoebus.com",
+    "customer_birthday": "14/03/2001",
+    "customer_address_street": "Av. Ruy Carneiro",
+    "customer_address_street_number": "300",
+    "customer_address_neighbourhood": "Miramar",
+    "customer_address_zip_code": "58000000000",
+    "customer_address_city": "João Pessoa",
+    "customer_address_state": "PB",
+    "batch_number": "2",
+    "plan": "TODO",
+    "acount_type": "MAESTRO",
+    "merchant_issuer_specific_id": "123456",
+    "phast_server_instance_name": "HOST_NAME",
+    "authorizer_address": "192.168.1.1",
+    "authorizer_port": 1010,
+    "ticket_number": 1,
+    "additional_amount": "10",
+    "additional_amount_type": "TIP",
+    "receipt": {
+      "merchant_receipt": "<div class='formatted'> </div><div class='formatted'> MASTERCARD - Via Estabelecimento   </div><div class='formatted'> </div><div class='formatted'>  GIRONDINO               </div><div class='formatted'> RUA BOA VISTA 00365               SPBR</div><div class='formatted'> CNPJ: 69001857/0001-22      1133125252</div><div class='formatted'>  EC:005591768 </div><div class='formatted'>  Mastercard</div><div class='formatted'> VENDA CREDITO A VISTA</div><div class='formatted'>  ************3609 </div><div class='formatted'>  27/11/20 09:41</div><div class='formatted'> VALOR APROVADO: R$ 38,75</div><div class='formatted'>  </div><div class='formatted'> CV:000033502549            AUTO:413468</div><div class='formatted'> </div><div class='formatted'>  </div><div class='formatted'> AID: A0000000041010</div><div class='formatted'>  </div><div class='formatted'> TERM:BW0C2181       </div><div class='formatted'>  </div><div class='formatted'> ________________________________   </div><div class='formatted'> ASSINATURA DO CLIENTE        </div>",
+      "client_receipt": "<div class='formatted'> </div><div class='formatted'> MASTERCARD - Via Cliente       </div><div class='formatted'>  </div><div class='formatted'> GIRONDINO </div><div class='formatted'>  RUA BOA VISTA 00365 SPBR</div><div class='formatted'>  CNPJ: 69001857/0001-22      1133125252</div> <div class='formatted'>  EC:005591768 </div><div class='formatted'> Mastercard</div><div class='formatted'>  VENDA CREDITO A VISTA</div><div class='formatted'> ************3609   </div><div class='formatted'>  27/11/20 09:41</div> <div class='formatted'>  VALOR APROVADO: R$ 38,75</div><div class='formatted'>  </div> <div class='formatted'>  CV:000033502549 AUTO:413468</div><div class='formatted'> </div><div class='formatted'>  </div><div class='formatted'>  AID: A0000000041010</div> <div class='formatted'>  </div><div class='formatted'>  TERM:BW0C2181</div>"
+    },
+    "wallet_id": "123456",
+    "splits": [
+      {
+        "split_notification_date": "2019-07-02T13:11:46.295Z",
+        "professional_name": "john",
+        "professional_national_id": "67997116036",
+        "professional_nickname": "Programmer",
+        "professional_phone_number": "83999999999",
+        "professional_email": "john.doe@phoebustecnologia.com.br",
+        "total_split_value": "15",
+        "total_commission_value": "3",
+        "products": {
+          "product_name": "Débito",
+          "product_value": 15,
+          "commission_percentage": "10",
+          "commission_value": 1.5
+        }
+      }
+    ],
+    "client_nsu": 2123,
+    "battery_percentage": "99",
+    "communication_type": "WIFI",
+    "latitude": "-7.1183898490330355",
+    "longitude": "-34.840673773938065",
+    "operator_sim": "OPSIM",
+    "iccid": "8991101200003204514",
+    "apn": "apn.opsim.com",
+    "strength_gsm": "3",
+    "strength_wireless": "2",
+    "has_signature": false,
+    "acquirer_status_id": 2,
+    "subscription_id": "0af4572a94264009851610efdd8e6833",
+    "payment_link_id": "13791510-ad76-4f99-ac5e-a0331e2c5b74",
+    "customer_address_complements": "ap 1000",
+    "customer_first_name": "João",
+    "customer_last_name": "Silva",
+    "customer_phone": "83999885544",
+    "customer_phone2": "83999885555",
+    "expected_capture_date": "2023-04-01",
+    "gateway_name": "ADIQ",
+    "original_date": "2017-11-22T20:14:44.939Z",
+    "original_nsu": 150081,
+    "original_uuid": "fcb7ebff-b7b8-379c-9a08-d1b4808fc9a1",
+    "original_value": 50,
+    "resolution_type": "Automática",
+    "voucher_data": [
+      {
+        "name": "MERCHANT_NAME",
+        "label": "NOME DO ESTABELECIMENTO",
+        "value": "TESTE2"
+      },
+      {
+        "name": "MERCHANT_ADDRESS",
+        "label": "ENDEREÇO DO ESTABELECIMENTO",
+        "value": "Rua Octacílio Cunha, 89"
+      },
+      {
+        "name": "MERCHANT_CITY",
+        "label": "CIDADE DO ESTABELECIMENTO",
+        "value": "João Pessoa"
+      },
+      {
+        "name": "MERCHANT_STATE",
+        "label": "ESTADO DO ESTABELECIMENTO",
+        "value": "PB"
+      },
+      {
+        "name": "MERCHANT_CODE",
+        "label": "COD.ESTAB.",
+        "value": "0027814603679300"
+      },
+      {
+        "name": "TERMINAL",
+        "label": "POS",
+        "value": "41189358"
+      },
+      {
+        "name": "NSU",
+        "label": "DOC",
+        "value": "685615"
+      },
+      {
+        "name": "DATE",
+        "label": "DATA",
+        "value": "20/04/23"
+      },
+      {
+        "name": "HOUR",
+        "label": "HORA",
+        "value": "15:11"
+      },
+      {
+        "name": "ISSUER_NAME",
+        "label": "EMISSOR",
+        "value": "CIELO#VISA ELECTRON"
+      },
+      {
+        "name": "CARD_NUMBER",
+        "label": "CARTÃO",
+        "value": "541333-0023"
+      },
+      {
+        "name": "TRANSACTION_TYPE",
+        "label": "TIPO DE TRANSAÇÃO",
+        "value": "VENDA A CREDITO"
+      },
+      {
+        "name": "AUTHORIZATION_CODE",
+        "label": "AUTORIZAÇÃO",
+        "value": "316417"
+      },
+      {
+        "name": "TRANSACTION_MODE",
+        "label": "MODO DA TRANSAÇÃO",
+        "value": "ONL"
+      },
+      {
+        "name": "INPUT_METHOD",
+        "label": "MODO DE ENTRADA",
+        "value": "C"
+      }
+    ],
+    "boot_date_time": "2017-11-22T20:14:44.939Z",
+    "currency_symbol": "R$",
+    "currency_code": "986",
+    "currency_name": "Brazilian real",
+    "transaction_date_time_local": "2017-11-22T20:14:44.939Z",
+    "zone_id": "UTC"
+  }

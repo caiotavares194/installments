@@ -1,0 +1,120 @@
+[
+  {
+    "nsu": 150081,
+    "payment_date": "2023-04-10T10:00:00Z",
+    "product_name": "Débito",
+    "value": 5000,
+    "status": 1,
+    "brand": "VISA ELECTRON",
+    "gateway_name": "ADIQ",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Manual"
+  },
+  {
+    "nsu": 150082,
+    "payment_date": "2023-04-10T10:05:00Z",
+    "product_name": "Débito",
+    "value": 10000,
+    "status": 1,
+    "brand": "MASTERCARD",
+    "gateway_name": "STONE",
+    "merchant_issuer_specific_id": "654321",
+    "resolution_type": "Manual"
+  },
+  {
+    "nsu": 150083,
+    "payment_date": "2023-04-10T10:10:00Z",
+    "product_name": "Crédito",
+    "parcels": 1,
+    "value": 15000,
+    "status": 1,
+    "brand": "VISA",
+    "gateway_name": "PAYU",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Automática"
+  },
+  {
+    "nsu": 150084,
+    "payment_date": "2023-04-10T10:15:00Z",
+    "product_name": "Crédito",
+    "parcels": 2,
+    "value": 20000,
+    "status": 1,
+    "brand": "MASTERCARD",
+    "gateway_name": "ADIQ",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Manual"
+  },
+  {
+    "nsu": 150085,
+    "payment_date": "2023-04-10T10:20:00Z",
+    "product_name": "Crédito",
+    "parcels": 3,
+    "value": 30000,
+    "status": 1,
+    "brand": "ELO",
+    "gateway_name": "STONE",
+    "merchant_issuer_specific_id": "654321",
+    "resolution_type": "Automática"
+  },
+  {
+    "nsu": 150086,
+    "payment_date": "2023-04-10T10:25:00Z",
+    "product_name": "Crédito",
+    "parcels": 4,
+    "value": 40000,
+    "status": 1,
+    "brand": "VISA",
+    "gateway_name": "PAYU",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Manual"
+  },
+  {
+    "nsu": 150087,
+    "payment_date": "2023-04-10T10:30:00Z",
+    "product_name": "Crédito",
+    "parcels": 5,
+    "value": 50000,
+    "status": 1,
+    "brand": "MASTERCARD",
+    "gateway_name": "ADIQ",
+    "merchant_issuer_specific_id": "654321",
+    "resolution_type": "Automática"
+  },
+  {
+    "nsu": 150088,
+    "payment_date": "2023-04-10T10:35:00Z",
+    "product_name": "Crédito",
+    "parcels": 6,
+    "value": 60000,
+    "status": 1,
+    "brand": "ELO",
+    "gateway_name": "STONE",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Manual"
+  },
+  {
+    "nsu": 150089,
+    "payment_date": "2023-04-10T10:40:00Z",
+    "product_name": "Crédito",
+    "parcels": 2,
+    "value": 8000,
+    "status": 1,
+    "brand": "VISA",
+    "gateway_name": "PAYU",
+    "merchant_issuer_specific_id": "654321",
+    "resolution_type": "Automática"
+  },
+  {
+    "nsu": 150090,
+    "payment_date": "2023-04-10T10:45:00Z",
+    "product_name": "Crédito",
+    "parcels": 8,
+    "value": 40000,
+    "status": 1,
+    "brand": "MASTERCARD",
+    "gateway_name": "ADIQ",
+    "merchant_issuer_specific_id": "123456",
+    "resolution_type": "Automática"
+  }
+]
